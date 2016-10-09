@@ -15,6 +15,7 @@ RUN apt-get update \
     && apt-get -y install clang-3.8 gcc-5 g++-5 \
     && apt-get -y install libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
     && ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0 \
+    && export SUDO_FORCE_REMOVE=yes \
     && apt-get -y purge sudo wget \
     && apt-get -y clean \
     && apt-get -y autoremove
