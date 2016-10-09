@@ -5,6 +5,7 @@ RUN apt-get -y install sudo binutils build-essential cmake doxygen libboost-all-
 
 # TODO: Get rid of these uglyness
 # install libprotobuf-dev & protobuf-compiler packages
+RUN cd /var/cache/apt/archives
 RUN wget "http://launchpadlibrarian.net/283310560/protobuf-compiler_3.0.0-7ubuntu3_amd64.deb"
 RUN wget "http://launchpadlibrarian.net/283310559/libprotoc10_3.0.0-7ubuntu3_amd64.deb"
 
@@ -37,3 +38,7 @@ RUN apt-get -y install libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxts
 
 # TODO: Get rid of this manually workaround http://askubuntu.com/questions/288821/how-do-i-resolve-a-cannot-open-shared-object-file-libudev-so-0-error
 RUN ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0
+
+# Make the built smaller:
+RUN apt-get -y clean
+RUN apt-get -y autoremove
