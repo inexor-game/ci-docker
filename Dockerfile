@@ -12,11 +12,12 @@ RUN apt-get update \
     && wget "http://launchpadlibrarian.net/283310558/libprotobuf10_3.0.0-7ubuntu3_amd64.deb" \
     && wget "http://launchpadlibrarian.net/283310556/libprotobuf-lite10_3.0.0-7ubuntu3_amd64.deb" \
     && dpkg --install protobuf-compiler_3.0.0-7ubuntu3_amd64.deb libprotoc10_3.0.0-7ubuntu3_amd64.deb libprotobuf-dev_3.0.0-7ubuntu3_amd64.deb libprotobuf10_3.0.0-7ubuntu3_amd64.deb libprotobuf-lite10_3.0.0-7ubuntu3_amd64.deb \
-	&& apt-get -y install clang-3.8 gcc-5 g++-5 \
-	&& apt-get -y install libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
-	&& ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0 \
-	&& apt-get -y clean \
-	&& apt-get -y autoremove
+    && apt-get -y install clang-3.8 gcc-5 g++-5 \
+    && apt-get -y install libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
+    && ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0 \
+    && apt-get -y purge sudo wget \
+    && apt-get -y clean \
+    && apt-get -y autoremove
 
 	
 # TODO: Get rid of these uglyness when installing libprotobuf-dev & protobuf-compiler packages
