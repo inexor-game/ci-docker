@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 ## https://www.ianlewis.org/en/creating-smaller-docker-images
 
 RUN apt-get update \
-    && apt-get -y install sudo binutils build-essential cmake doxygen libboost-filesystem-dev libboost-graph-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-signals-dev libenet-dev libgconf2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libudev-dev zlib1g-dev wget \
+    && apt-get -y install sudo binutils build-essential cmake doxygen libboost-filesystem-dev libboost-graph-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-signals-dev libboost-thread-dev libenet-dev libgconf2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libudev-dev zlib1g-dev wget \
     && cd /var/cache/apt/archives \
     && wget "http://launchpadlibrarian.net/283310560/protobuf-compiler_3.0.0-7ubuntu3_amd64.deb" \
     && wget "http://launchpadlibrarian.net/283310559/libprotoc10_3.0.0-7ubuntu3_amd64.deb" \
