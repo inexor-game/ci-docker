@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
 ## Try to run everything in one step, this will reduce the docker image size dramatically
-## https://www.ianlewis.org/en/creating-smaller-docker-images
+## Docker is working with diffs, every step is creating a new diff, one step means just one diff
+## therefore unnecessary interim stages are not saved
 
 RUN apt-get update \
     && apt-get -y --no-install-recommends install sudo binutils build-essential cmake doxygen libboost-filesystem-dev libboost-graph-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-signals-dev libboost-thread-dev libenet-dev libgconf2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libudev-dev zlib1g-dev wget clang-3.8 gcc-5 g++-5 \
