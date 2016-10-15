@@ -1,5 +1,7 @@
 FROM ubuntu:16.10
 
+## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in code/master
+
 ## Try to run everything in one step, this will reduce the docker image size dramatically
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
 ## therefore unnecessary interim stages are not saved
@@ -19,6 +21,11 @@ RUN apt-get update \
     && apt-get -y purge sudo wget \
     && apt-get -y clean \
     && apt-get -y autoremove \
+    && rm -rf /usr/share/man/*
+    && rm -rf /usr/share/doc/*
+    && rm -rf /var/log/*
+    && rm -rf /var/tmp/*
+    && rm -rf /var/lib/apt/mirrors/*
     && rm -rf /var/lib/apt/lists/*
 
 	
