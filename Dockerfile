@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:16.10
 
 ## Try to run everything in one step, this will reduce the docker image size dramatically
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
@@ -19,7 +19,7 @@ RUN apt-get update \
     && apt-get -y purge sudo wget \
     && apt-get -y clean \
     && apt-get -y autoremove \
-	&& rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 	
 # TODO: Get rid of these uglyness when installing libprotobuf-dev & protobuf-compiler packages
