@@ -11,7 +11,7 @@ FROM ubuntu:16.10
 RUN apt-get update \
     && apt-get -y install sudo binutils build-essential cmake doxygen nasm clang-3.9 gcc-6 g++-6 \
     && apt-get -y --no-install-recommends install python-dev libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
-    && python -m pip install conan
+    && python -m pip install conan \
     && ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0 \
     && export SUDO_FORCE_REMOVE=yes \
     && apt-get -y purge sudo \
