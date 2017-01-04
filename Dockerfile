@@ -1,4 +1,4 @@
-FROM ubuntu:16.10
+FROM ubuntu:17.04
 
 ## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in code/master
 
