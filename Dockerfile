@@ -15,8 +15,7 @@ RUN apt-get update \
     && python get-pip.py \
     && python -m pip install conan \
     && ln -sf /lib/$(arch)-linux-gnu/libudev.so.1 /lib/$(arch)-linux-gnu/libudev.so.0 \
-    && export SUDO_FORCE_REMOVE=yes \
-    && apt-get -y purge sudo wget \
+    && apt-get -y purge wget \
     && apt-get -y clean \
     && apt-get -y autoremove \
     && rm -rf /usr/share/man/* \ 
