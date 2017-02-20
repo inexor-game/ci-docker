@@ -6,9 +6,10 @@ FROM ubuntu:17.04
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
 ## therefore unnecessary interim stages are not saved
 
+## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-3.5 clang-3.9 gcc-6 g++-6 wget \
+    && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-3.5 clang-3.9 gcc-6 g++-6 wget ncftp \
     && apt-get -y --no-install-recommends install python-dev libgtk2.0-dev libgtkglext1-dev libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
@@ -24,4 +25,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-# TODO: Can we get rid of the CEF related deps? (libgtk2.0-dev + libgtkglext1-dev + libnss3)
+# TODO: Can we get rid of the CEF related deps? (libgtk2.0-dev, libgtkglext1-dev, libnss3 etc...)
