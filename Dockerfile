@@ -10,7 +10,7 @@ FROM ubuntu:17.04
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-3.5 clang-3.9 gcc-6 g++-6 wget \
-    && apt-get -y --no-install-recommends install python-dev libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
+    && apt-get -y --no-install-recommends install python-dev libfontconfig1 libfreetype6 libnss3 libxcomposite1 libxtst6 libxcursor1 libgconf-2-4 libcups2 libcairo2 libpango-1.0-0 libpangocairo-1.0-0 \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && python -m pip install conan \
