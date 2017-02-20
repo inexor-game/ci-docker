@@ -10,7 +10,7 @@ FROM ubuntu:17.04
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-3.5 clang-3.9 gcc-6 g++-6 wget \
-    && apt-get -y --no-install-recommends install python-dev libgtk2.0-dev libgtkglext1-dev \
+    && apt-get -y --no-install-recommends install python-dev libgtk2.0-dev libgtkglext1-dev libnss3 \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && python -m pip install conan \
@@ -26,6 +26,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-# TODO: Can we get rid of the CEF related deps? (libfontconfig1..)
+# TODO: Can we get rid of the CEF related deps? (libgtk2.0-dev + libgtkglext1-dev + libnss3)
 
 # TODO: Get rid of this manually workaround http://askubuntu.com/questions/288821/how-do-i-resolve-a-cannot-open-shared-object-file-libudev-so-0-error
