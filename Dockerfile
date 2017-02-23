@@ -11,7 +11,7 @@ FROM ubuntu:17.04
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-3.9 gcc-6 g++-6 wget ncftp \
     && apt-get -y --no-install-recommends install zip unzip python-dev \
-    && apt-get -y --no-install-recommends install freeglut3-dev \
+    && apt-get -y --no-install-recommends install libglew-dev \
     && apt-get -y --no-install-recommends install libgtk2.0-dev libgtkglext1-dev libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
