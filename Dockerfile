@@ -9,10 +9,15 @@ FROM ubuntu:17.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential cmake doxygen git libtool nasm clang-4.0 gcc-6 g++-6 wget ncftp \
+    && apt-get -y install sudo autoconf binutils build-essential doxygen git libtool nasm clang-4.0 gcc-6 g++-6 wget ncftp \
     && apt-get -y --no-install-recommends install zip unzip python-dev \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libgtk2.0-dev libgtkglext1-dev libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
+    && wget https://cmake.org/files/v3.8/cmake-3.8.1-Linux-x86_64.tar.gz --no-check-certificate \
+    && tar -xzf cmake-3.8.1-Linux-x86_64.tar.gz \
+    && cp -fR cmake-3.8.1-Linux-x86_64/* /usr \
+    && rm -rf cmake-3.8.1-Linux-x86_64 \
+    && rm cmake-3.8.1-Linux-x86_64.tar.gz \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && python -m pip install conan \
