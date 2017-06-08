@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 ## https://www.ianlewis.org/en/creating-smaller-docker-images
 
 RUN apt-get update \
-    && apt-get -y install sudo binutils build-essential cmake doxygen libboost-filesystem-dev libboost-graph-dev libboost-program-options-dev libboost-random-dev libboost-regex-dev libboost-signals-dev libboost-thread-dev libenet-dev libgconf2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libudev-dev zlib1g-dev wget clang-3.8 gcc-5 g++-5 \
+    && apt-get -y install sudo binutils build-essential cmake libgconf2-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libudev-dev zlib1g-dev wget clang-3.8 gcc-5 g++-5 \
     && cd /var/cache/apt/archives \
     && wget "http://launchpadlibrarian.net/283310560/protobuf-compiler_3.0.0-7ubuntu3_amd64.deb" \
     && wget "http://launchpadlibrarian.net/283310559/libprotoc10_3.0.0-7ubuntu3_amd64.deb" \
@@ -19,9 +19,5 @@ RUN apt-get update \
     && apt-get -y clean \
     && apt-get -y autoremove
 
-	
-# TODO: Get rid of these uglyness when installing libprotobuf-dev & protobuf-compiler packages
 
 # TODO: Can we get rid of the CEF related deps? (libfontconfig1..)
-
-# TODO: Get rid of this manually workaround http://askubuntu.com/questions/288821/how-do-i-resolve-a-cannot-open-shared-object-file-libudev-so-0-error
