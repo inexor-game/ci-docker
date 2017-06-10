@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool clang-4.0 gcc-6 g++-6 wget ncftp \
     && apt-get -y --no-install-recommends install zip unzip python-dev \
     && apt-get -y --no-install-recommends install freeglut3-dev \
-    && apt-get -y --no-install-recommends install libgtk2.0-dev libgtkglext1-dev libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
+    && apt-get -y --no-install-recommends install libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
     && wget https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz --no-check-certificate \
     && tar -xzf cmake-3.8.2-Linux-x86_64.tar.gz \
     && cp -fR cmake-3.8.2-Linux-x86_64/* /usr \
@@ -32,4 +32,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-# TODO: Can we get rid of the CEF related deps? (libgtk2.0-dev, libgtkglext1-dev, libnss3 etc...)
+# TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
