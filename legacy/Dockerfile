@@ -9,10 +9,10 @@ FROM ubuntu:17.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool nasm clang-3.8 clang-3.9 gcc-5 g++-5 wget ncftp \
-    && apt-get -y --no-install-recommends install zip unzip python-dev \
+    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool nasm python-dev clang-3.8 clang-3.9 gcc-5 g++-5  \
+    && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
-    && apt-get -y --no-install-recommends install libgtk2.0-dev libgtkglext1-dev libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
+    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && python -m pip install conan \
@@ -27,4 +27,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-# TODO: Can we get rid of the CEF related deps? (libgtk2.0-dev, libgtkglext1-dev, libnss3 etc...)
+# TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
