@@ -9,10 +9,10 @@ FROM ubuntu:17.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-4.0 gcc-6 g++-6  \
-    && apt-get -y --no-install-recommends install ncftp wget zip unzip  \
+    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-4.0 gcc-6 g++-6 \
+    && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
-    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
+    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libXcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
     && wget https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz --no-check-certificate \
     && tar -xzf cmake-3.8.2-Linux-x86_64.tar.gz \
     && cp -fR cmake-3.8.2-Linux-x86_64/* /usr \
