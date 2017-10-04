@@ -1,11 +1,13 @@
 FROM ubuntu:16.04
 
-# Ubuntu Xenial + latest Node.js non-LTS version: 8
+# Ubuntu Xenial + Node.js 8 (not a LTS version)
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc g++ \
-    && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
-    && sudo apt-get install -y nodejs \
+    && rm /etc/apt/sources.list \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+    && apt-get update \
+    && apt-get -y install nodejs npm \
     && apt-get -y clean \
     && apt-get -y autoremove \
     && rm -rf /usr/share/man/* \
