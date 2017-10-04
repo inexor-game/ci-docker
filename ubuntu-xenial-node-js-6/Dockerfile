@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 # Ubuntu Xenial + Node.js 6 LTS
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc g++ \
+    && apt-get -y install sudo autoconf binutils build-essential curl git libtool nasm python-dev gcc g++ \
     && rm /etc/apt/sources.list \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update \
