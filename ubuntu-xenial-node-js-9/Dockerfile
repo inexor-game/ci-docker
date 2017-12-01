@@ -1,10 +1,10 @@
 FROM ubuntu:16.04
 
-# Ubuntu Xenial + Node.js 8 LTS
+# Ubuntu Xenial + Node.js 9 (not a LTS version)
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential curl git libtool nasm python-dev gcc g++ \
-    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
     && apt-get update \
     && apt-get -y install nodejs \
     && apt-get -y clean \
