@@ -1,6 +1,6 @@
 FROM ubuntu:17.10
 
-## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in code/master
+## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in inexor-core/master
 
 ## Try to run everything in one step, this will reduce the docker image size dramatically
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff

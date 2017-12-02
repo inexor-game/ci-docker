@@ -1,6 +1,6 @@
 FROM ubuntu:17.04
 
-## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in code/master
+## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in inexor-core/master
 
 ## Try to run everything in one step, this will reduce the docker image size dramatically
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
@@ -9,7 +9,7 @@ FROM ubuntu:17.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool nasm python-dev clang-3.8 \
+    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool nasm python-dev xutils-dev clang-3.8 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
@@ -28,3 +28,4 @@ RUN apt-get update \
 
 
 # TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
+# xutils-dev -> makedepend -> OpenSSL
