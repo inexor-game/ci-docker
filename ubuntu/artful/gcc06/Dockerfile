@@ -1,6 +1,6 @@
 FROM ubuntu:17.10
 
-## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in code/master
+## FRIENDLY REMINDER: Don't push breaking changes to the master branch, without using it in inexor-core/master
 
 ## Try to run everything in one step, this will reduce the docker image size dramatically
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
@@ -12,7 +12,7 @@ ENV CMAKE_VERSION=3.10 \
     CMAKE_VERSION_COMPLETE=3.10.0
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc-6 g++-6 \
+    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev xutils-dev gcc-6 g++-6 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
@@ -36,3 +36,4 @@ RUN apt-get update \
 
 
 # TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
+# xutils-dev -> makedepend -> OpenSSL
