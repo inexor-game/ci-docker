@@ -15,7 +15,7 @@ RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev xutils-dev clang-4.0 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
-    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 \
+    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \
     && wget https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz --no-check-certificate \
     && tar -xzf cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz \
     && cp -fR cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64/* /usr \
