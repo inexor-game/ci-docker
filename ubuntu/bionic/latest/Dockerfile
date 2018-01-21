@@ -9,7 +9,7 @@ FROM ubuntu:18.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 ENV CMAKE_VERSION=3.10 \
-    CMAKE_VERSION_COMPLETE=3.10.0
+    CMAKE_VERSION_COMPLETE=3.10.2
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev xutils-dev clang-5.0 gcc-7 g++-7 \
