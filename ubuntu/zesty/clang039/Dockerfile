@@ -9,7 +9,7 @@ FROM ubuntu:17.04
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool python-dev clang-3.9 \
+    && apt-get -y install sudo autoconf binutils build-essential cmake git libtool nasm python-dev clang-3.9 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \

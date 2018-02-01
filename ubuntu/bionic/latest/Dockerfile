@@ -12,7 +12,7 @@ ENV CMAKE_VERSION=3.10 \
     CMAKE_VERSION_COMPLETE=3.10.2
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool python-dev clang-5.0 gcc-7 g++-7 \
+    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-5.0 gcc-7 g++-7 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \
