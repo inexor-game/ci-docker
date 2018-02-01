@@ -12,7 +12,7 @@ ENV CMAKE_VERSION=3.10 \
     CMAKE_VERSION_COMPLETE=3.10.2
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev xutils-dev gcc-6 g++-6 \
+    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc-6 g++-6 \
     && apt-get -y --no-install-recommends install ncftp wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \
@@ -36,4 +36,4 @@ RUN apt-get update \
 
 
 # TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
-# xutils-dev -> makedepend -> OpenSSL
+
