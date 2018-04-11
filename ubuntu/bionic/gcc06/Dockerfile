@@ -8,8 +8,8 @@ FROM ubuntu:18.04
 
 ## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
 
-ENV CMAKE_VERSION=3.10 \
-    CMAKE_VERSION_COMPLETE=3.10.2
+ENV CMAKE_VERSION=3.11 \
+    CMAKE_VERSION_COMPLETE=3.11.0
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc-6 g++-6 \
