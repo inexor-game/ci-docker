@@ -6,14 +6,14 @@ FROM ubuntu:18.04
 ## Docker is working with diffs, every step is creating a new diff, one step means just one diff
 ## therefore unnecessary interim stages are not saved
 
-## Notes: ncftp needed to upload nightlies; don't install pip via apt but directly to get latest version
+## Notes: don't install pip via apt but directly to get latest version
 
 ENV CMAKE_VERSION=3.11 \
     CMAKE_VERSION_COMPLETE=3.11.0
 
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev gcc-6 g++-6 \
-    && apt-get -y --no-install-recommends install ncftp wget zip unzip \
+    && apt-get -y --no-install-recommends install wget zip unzip \
     && apt-get -y --no-install-recommends install freeglut3-dev \
     && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \
     && wget https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz --no-check-certificate \
