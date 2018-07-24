@@ -12,7 +12,7 @@ ENV CMAKE_VERSION=3.12 \
     CMAKE_VERSION_COMPLETE=3.12.0
 
 RUN apt-get update \
-    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-5.0 gcc-8 g++-8 \
+    && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-5.0 g++-8 \
     && apt-get -y --no-install-recommends install wget zip unzip \
     && wget https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz --no-check-certificate \
     && tar -xzf cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz \
