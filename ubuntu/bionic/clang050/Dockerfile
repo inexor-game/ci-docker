@@ -14,8 +14,6 @@ ENV CMAKE_VERSION=3.11 \
 RUN apt-get update \
     && apt-get -y install sudo autoconf binutils build-essential git libtool nasm python-dev clang-5.0 \
     && apt-get -y --no-install-recommends install wget zip unzip \
-    && apt-get -y --no-install-recommends install freeglut3-dev \
-    && apt-get -y --no-install-recommends install libpangocairo-1.0-0 libxcomposite1 libxrandr2 libxcursor1 libatk1.0-0 libcups2 libnss3 libgconf-2-4 libxss1 libasound2 libxtst6 libgtk2.0-dev libgtk2.0-0 libgdk-pixbuf2.0-dev \
     && wget https://cmake.org/files/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz --no-check-certificate \
     && tar -xzf cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64.tar.gz \
     && cp -fR cmake-${CMAKE_VERSION_COMPLETE}-Linux-x86_64/* /usr \
@@ -33,6 +31,3 @@ RUN apt-get update \
     && rm -rf /var/tmp/* \
     && rm -rf /var/lib/apt/mirrors/* \
     && rm -rf /var/lib/apt/lists/*
-
-
-# TODO: Can we get rid of the CEF related deps? (libnss3, libgconf-2-4 etc...)
